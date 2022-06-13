@@ -33,10 +33,10 @@ for e in range(epochs):
       ref_img = data['ref'].to(device)
       output_img = model(input_img)
             
-     loss = loss_fn(output_img, ref_img)
-     optimizer.zero_grad()
-     loss.backward()
-     optimizer.step()
+      loss = loss_fn(output_img, ref_img)
+      optimizer.zero_grad()
+      loss.backward()
+      optimizer.step()
 ```
 
 ## Documentation
