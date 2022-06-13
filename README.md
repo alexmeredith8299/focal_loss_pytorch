@@ -1,3 +1,4 @@
+[![Documentation Status](https://readthedocs.org/projects/focal-loss-pytorch/badge/?version=latest)](https://focal-loss-pytorch.readthedocs.io/en/latest/?badge=latest)
 # focal-loss-pytorch
 Simple vectorized PyTorch implementation of binary unweighted focal loss as specified by [[1]](https://arxiv.org/pdf/1708.02002.pdf).
 
