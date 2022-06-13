@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.abspath('../../'))
 
 # -- Project information -----------------------------------------------------
 
-project = "SM Thesis"
+project = "focal-loss-pytorch"
 copyright = '2022, Alex Meredith'
 author = 'Alex Meredith'
 
