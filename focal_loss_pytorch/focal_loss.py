@@ -30,6 +30,7 @@ class BinaryFocalLoss(torch.nn.modules.loss._Loss):
             raise AttributeError("Invalid reduction type. Please use 'mean', 'sum', or 'none'.")
         super().__init__(None, None, reduction)
         self.gamma = gamma
+        self.eps = torch.finfo(torch.float32).eps
 
     def forward(self, input_tensor, target):
         """
@@ -61,6 +62,7 @@ class BinaryFocalLoss(torch.nn.modules.loss._Loss):
 
         #Vectorized computation of binary focal loss
         pt_tensor = (target == 0)*(1-input_tensor) + target*input_tensor
+        pt_tensor = torch.clamp(pt_tensor, min=self.eps, max=1.0) #Avoid vanishing gradient
         loss_tensor = -(1-pt_tensor)**self.gamma*torch.log(pt_tensor)
 
         #Apply reduction
